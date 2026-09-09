@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Marca | Experiencia Exclusiva</title>
+    <!-- Enlazamos su propia hoja de estilos -->
+    <link rel="stylesheet" href="../css/landings.css">
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="logo">✨ Mi Marca</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#testimonios">Opiniones</a></li>
+            <!-- Saludo personalizado al usuario que se acaba de registrar -->
+            <li class="user-badge" id="saludoUsuario">Hola 👋</li>
+            <!-- Enlace al Panel Admin -->
+            <li><a href="admin.html" class="btn-admin">Panel Admin 🔐</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. SECCIÓN 1: PORTADA / HERO (Alimentada por el Dashboard) -->
+    <header id="hero" class="hero">
+        <div class="hero-contenido">
+            <span class="tag-bienvenida">✨ Experiencia Personalizada ✨</span>
+            <h1 id="heroTitulo">Realza Tu Belleza y Estilo Único</h1>
+            <p id="heroSubtitulo">
+                Descubre los mejores productos y tratamientos de belleza pensados exclusivamente para ti.
+            </p>
+            <a href="#servicios" class="btn-hero" id="heroBoton">Explorar Servicios</a>
+        </div>
+    </header>
+
+    <!-- 3. SECCIÓN 2: SERVICIOS / CARACTERÍSTICAS -->
+    <section id="servicios" class="seccion">
+        <h2 class="titulo-seccion">Nuestros Servicios Exclusivos</h2>
+        <p class="subtitulo-seccion">Calidad, dedicación y cuidado en cada detalle.</p>
+
+        <div class="grid-cards" id="contenedorServicios">
+            <div class="card">
+                <div class="card-icon">💄</div>
+                <h3>Maquillaje Profesional</h3>
+                <p>Estilos para bodas, eventos sociales o sesiones fotográficas que destacan tus mejores rasgos.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✨</div>
+                <h3>Tratamiento Facial</h3>
+                <p>Hidratación profunda y rejuvenecimiento para que tu piel luzca fresca y radiante.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛍️</div>
+                <h3>Productos Premium</h3>
+                <p>Línea de cosméticos dermatológicamente testeados y libres de crueldad animal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN 3: SOBRE NOSOTROS (Alimentada por el Dashboard) -->
+    <section id="nosotros" class="seccion seccion-oscura">
+        <div class="contenedor-nosotros">
+            <h2 id="nosotrosTitulo">¿Quiénes Somos?</h2>
+            <p id="nosotrosTexto">
+                En <strong>Mi Marca</strong> creemos que la belleza es una forma de expresión personal. 
+                Nuestra misión es acompañarte a encontrar tu mejor versión con confianza y asesoría personalizada.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN 4: TESTIMONIOS / OPINIONES -->
+    <section id="testimonios" class="seccion">
+        <h2 class="titulo-seccion">Lo Que Dicen Nuestras Clientas</h2>
+        
+        <div class="grid-cards">
+            <div class="card testimonio">
+                <p class="estrellas">⭐⭐⭐⭐⭐</p>
+                <p>"La atención fue de otro nivel. El maquillaje me duró toda la noche intacto."</p>
+                <h4>- Camila Gómez</h4>
+            </div>
+
+            <div class="card testimonio">
+                <p class="estrellas">⭐⭐⭐⭐⭐</p>
+                <p>"Los productos para la piel cambiaron por completo mi rutina diaria. ¡Súper recomendados!"</p>
+                <h4>- Andrea Morales</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SECCIÓN 5: FOOTER -->
+    <footer>
+        <p>© 2026 Mi Marca. Todos los derechos reservados.</p>
+        <p><a href="dashboard.html" class="link-volver">⬅ Volver al registro</a></p>
+    </footer>
+
+    <!-- Script para cargar datos automáticos -->
+    <script src="../js/landing.js"></script>
+</body>
+</html>

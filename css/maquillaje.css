@@ -1,0 +1,185 @@
+/* le aplica a todo los elementos de la pagina, body,h1,p,section,input,button */
+/* -------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    /* controla el tamano de la caja  */
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------- */
+/* color del fondo, y ajustes de la caja  */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: #090243;
+}
+
+/* ------------------------------------------------------------------------ */
+/* contenido principal de la pagina, donde se encuentra el formulario de login  */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* caja principal del formulario */
+section {
+    width: 400px;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* agrega, ajustes para la letra, como el orden,arriba,abajo y asi<afecta vienvenidos,centra el texto  */
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* igual afecta el contenido en p */
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+/* igual afecta el contenido dentro del contenedor from */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* selelciona los div que esten dentro del formulario */
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* afecta todo los campos escribes  */
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* dise;o del boton, color,tamano, texto todo */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgb(18, 4, 98);
+    color: white;
+    font-size: 16px;
+}
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
+.navbar {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente elegante */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #e0e0ff;
+    text-decoration: none; /* Quita el subrayado feo */
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff70a6; /* Color rosado elegante al pasar el mouse */
+}
+
+/* Botón especial del panel admin */
+.btn-admin {
+    background: #ff0055;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* --- ESTILOS DE LA PORTADA / HERO --- */
+.hero {
+    width: 100%;
+    padding: 70px 20px 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-contenido {
+    max-width: 700px;
+}
+
+#heroTitulo {
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+#heroSubtitulo {
+    font-size: 18px;
+    color: #c4c4e0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botón llamativo con degradado */
+.btn-hero {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #0e0242, #05023f);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 85, 0.6);
+}
