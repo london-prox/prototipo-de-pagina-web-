@@ -1,185 +1,166 @@
-/* le aplica a todo los elementos de la pagina, body,h1,p,section,input,button */
-/* -------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    /* controla el tamano de la caja  */
     box-sizing: border-box;
 }
 
-/* -------------------------------------------------------------------- */
-/* color del fondo, y ajustes de la caja  */
-body {
+html, body {
+    width: 100%;
     min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: Arial, sans-serif;
-
-    background: #090243;
+    overflow-x: hidden;
 }
 
-/* ------------------------------------------------------------------------ */
-/* contenido principal de la pagina, donde se encuentra el formulario de login  */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    background: #0a0014;
+}
+
+/* IMAGEN DE FONDO */
+.fondo-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Capa oscura encima de la imagen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 0, 20, 0.75);
+    z-index: -1;
+    pointer-events: none;
+}
+
 main {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
 }
 
-/* -------------------------------------------------------------------------------------- */
-/* caja principal del formulario */
-section {
-    width: 400px;
-
-    padding: 40px;
-
-    background: white;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* agrega, ajustes para la letra, como el orden,arriba,abajo y asi<afecta vienvenidos,centra el texto  */
-h1 {
+.form-container {
+    background: rgba(20, 0, 40, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 
+                inset 0 0 20px rgba(138, 43, 226, 0.1);
     text-align: center;
-    margin-bottom: 15px;
 }
 
-/* igual afecta el contenido en p */
-p {
-    text-align: center;
+.logo-top {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #fff 0%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 30px;
-    color: gray;
 }
 
-/* igual afecta el contenido dentro del contenedor from */
+h1 {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+p {
+    color: #b0b0d0;
+    font-size: 14px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    text-align: left;
 }
 
-/* selelciona los div que esten dentro del formulario */
-form div {
+.input-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
-/* afecta todo los campos escribes  */
+label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8a2be2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
-/* dise;o del boton, color,tamano, texto todo */
+input::placeholder {
+    color: #6b6b8d;
+}
+
+input:focus {
+    border-color: #8a2be2;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+}
+
 button {
-    padding: 12px;
+    margin-top: 10px;
+    padding: 16px;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: rgb(18, 4, 98);
-    color: white;
-    font-size: 16px;
-}
-
-/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
-.navbar {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.08); /* Fondo semi-transparente elegante */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    list-style: none; /* Quita los puntos de la lista */
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #e0e0ff;
-    text-decoration: none; /* Quita el subrayado feo */
-    font-size: 15px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ff70a6; /* Color rosado elegante al pasar el mouse */
-}
-
-/* Botón especial del panel admin */
-.btn-admin {
-    background: #ff0055;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: white !important;
-    font-weight: bold;
-}
-
-/* --- ESTILOS DE LA PORTADA / HERO --- */
-.hero {
-    width: 100%;
-    padding: 70px 20px 50px 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-contenido {
-    max-width: 700px;
-}
-
-#heroTitulo {
-    font-size: 42px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-#heroSubtitulo {
-    font-size: 18px;
-    color: #c4c4e0;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-/* Botón llamativo con degradado */
-.btn-hero {
-    display: inline-block;
-    padding: 14px 32px;
-    background: linear-gradient(135deg, #0e0242, #05023f);
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(135deg, #8a2be2, #6a1fb0);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease;
 }
 
-.btn-hero:hover {
+button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 0, 85, 0.6);
+    box-shadow: 0 12px 35px rgba(138, 43, 226, 0.7);
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 40px 24px;
+    }
+    h1 { font-size: 28px; }
 }

@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración | Mi Marca</title>
+    <title>Panel Admin | iHope</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 
+    <!-- VIDEO DE FONDO -->
+    <video id="videoFondo" autoplay muted loop playsinline>
+        <source src="../img/img_walpeper.mp4.mp4" type="video/mp4">
+    </video>
+
+    <!-- CAPA OSCURA -->
+    <div class="overlay"></div>
+
     <!-- NAVBAR ADMIN -->
     <nav class="admin-nav">
-        <div class="admin-logo">🔐 Panel Admin</div>
+        <div class="admin-logo">iHope Admin</div>
         <div class="admin-nav-links">
-            <a href="landing.html">👁️ Ver Landing</a>
-            <a href="dashboard.html">📋 Ver Formulario</a>
+            <a href="landing.html"> Ver Landing</a>
+            <a href="dashboard.html"> Formulario</a>
         </div>
     </nav>
 
@@ -22,21 +30,18 @@
         <!-- TARJETAS DE ESTADÍSTICAS -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-icon">👥</div>
                 <div class="stat-info">
                     <span class="stat-numero" id="totalClientes">0</span>
                     <span class="stat-label">Clientes Registrados</span>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">🌟</div>
                 <div class="stat-info">
                     <span class="stat-numero" id="ultimoCliente">—</span>
                     <span class="stat-label">Último Registro</span>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon">✏️</div>
                 <div class="stat-info">
                     <span class="stat-numero">4</span>
                     <span class="stat-label">Campos Editables</span>
@@ -48,7 +53,7 @@
 
             <!-- TABLA DE CLIENTES -->
             <section class="admin-seccion">
-                <h2 class="admin-titulo">👥 Clientes Registrados</h2>
+                <h2 class="admin-titulo"> Clientes Registrados</h2>
                 <div class="tabla-contenedor">
                     <table class="tabla-clientes">
                         <thead>
@@ -65,40 +70,40 @@
                     </table>
                     <p id="sinClientes" class="sin-datos">No hay clientes registrados aún.</p>
                 </div>
-                <button class="btn-peligro" onclick="borrarClientes()">🗑️ Borrar todos los clientes</button>
+                <button class="btn-peligro" onclick="borrarClientes()"> Borrar todos los clientes</button>
             </section>
 
             <!-- EDITOR DE LANDING -->
             <section class="admin-seccion">
-                <h2 class="admin-titulo">✏️ Editar Contenido de la Landing</h2>
+                <h2 class="admin-titulo"> Editar Contenido de la Landing</h2>
 
                 <div class="form-grupo">
                     <label>Título Principal (Hero)</label>
-                    <input type="text" id="inputHeroTitulo" placeholder="Ej: Realza Tu Belleza">
+                    <input type="text" id="inputHeroTitulo" placeholder="Ej: iHope Watch Series X">
                 </div>
 
                 <div class="form-grupo">
                     <label>Subtítulo (Hero)</label>
-                    <textarea id="inputHeroSubtitulo" rows="3" placeholder="Ej: Descubre los mejores productos..."></textarea>
+                    <textarea id="inputHeroSubtitulo" rows="3" placeholder="Ej: El reloj inteligente que redefine el lujo..."></textarea>
                 </div>
 
                 <div class="form-grupo">
                     <label>Título — Sección Nosotros</label>
-                    <input type="text" id="inputNosotrosTitulo" placeholder="Ej: Nuestra Historia">
+                    <input type="text" id="inputNosotrosTitulo" placeholder="Ej: Diseño que Inspira">
                 </div>
 
                 <div class="form-grupo">
                     <label>Texto — Sección Nosotros</label>
-                    <textarea id="inputNosotrosTexto" rows="4" placeholder="Ej: Somos una marca apasionada..."></textarea>
+                    <textarea id="inputNosotrosTexto" rows="4" placeholder="Ej: Cada reloj iHope es una obra de arte..."></textarea>
                 </div>
 
                 <div class="btn-grupo">
-                    <button class="btn-guardar" onclick="guardarCambios()">💾 Guardar Cambios</button>
-                    <button class="btn-reset" onclick="resetearContenido()">↩️ Restaurar Defaults</button>
+                    <button class="btn-guardar" onclick="guardarCambios()"> Guardar Cambios</button>
+                    <button class="btn-reset" onclick="resetearContenido()"> Restaurar Defaults</button>
                 </div>
 
                 <div id="mensajeGuardado" class="mensaje-ok" style="display:none;">
-                    ✅ ¡Cambios guardados! Se verán en la landing page.
+                     ¡Cambios guardados! Se verán en la landing page.
                 </div>
             </section>
 
