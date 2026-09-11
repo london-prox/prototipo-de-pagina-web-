@@ -3,58 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Admin | iHope</title>
+    <title>Admin | iHope</title>
+    <link rel="stylesheet" href="../css/landings.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 
-    <!-- VIDEO DE FONDO -->
     <video id="videoFondo" autoplay muted loop playsinline>
         <source src="../img/img_walpeper.mp4.mp4" type="video/mp4">
     </video>
-
-    <!-- CAPA OSCURA -->
     <div class="overlay"></div>
 
-    <!-- NAVBAR ADMIN -->
-    <nav class="admin-nav">
-        <div class="admin-logo">iHope Admin</div>
-        <div class="admin-nav-links">
-            <a href="landing.html"> Ver Landing</a>
-            <a href="dashboard.html"> Formulario</a>
-        </div>
+    <nav class="navbar">
+        <div class="logo">iHope Admin</div>
+        <ul class="nav-links">
+            <li><a href="landing.html">Ver Landing</a></li>
+            <li><a href="dashboard.html">Formulario</a></li>
+        </ul>
     </nav>
 
-    <div class="admin-contenedor">
+    <div class="admin-container">
+        <h2>Panel de Administración</h2>
 
-        <!-- TARJETAS DE ESTADÍSTICAS -->
+        <!-- ESTADÍSTICAS -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-info">
-                    <span class="stat-numero" id="totalClientes">0</span>
-                    <span class="stat-label">Clientes Registrados</span>
-                </div>
+                <div class="stat-number" id="totalClientes">0</div>
+                <div class="stat-label">Clientes Registrados</div>
             </div>
             <div class="stat-card">
-                <div class="stat-info">
-                    <span class="stat-numero" id="ultimoCliente">—</span>
-                    <span class="stat-label">Último Registro</span>
-                </div>
+                <div class="stat-number" id="ultimoCliente">—</div>
+                <div class="stat-label">Último Registro</div>
             </div>
             <div class="stat-card">
-                <div class="stat-info">
-                    <span class="stat-numero">4</span>
-                    <span class="stat-label">Campos Editables</span>
-                </div>
+                <div class="stat-number">4</div>
+                <div class="stat-label">Campos Editables</div>
             </div>
         </div>
 
+        <!-- GRID: TABLA + FORMULARIO -->
         <div class="admin-grid">
-
+            
             <!-- TABLA DE CLIENTES -->
-            <section class="admin-seccion">
-                <h2 class="admin-titulo"> Clientes Registrados</h2>
-                <div class="tabla-contenedor">
+            <div class="admin-section">
+                <h3>Clientes Registrados</h3>
+                <div class="tabla-container">
                     <table class="tabla-clientes">
                         <thead>
                             <tr>
@@ -64,48 +57,43 @@
                                 <th>Teléfono</th>
                             </tr>
                         </thead>
-                        <tbody id="tablaBody">
-                            <!-- Se llena con JavaScript -->
-                        </tbody>
+                        <tbody id="tablaBody"></tbody>
                     </table>
-                    <p id="sinClientes" class="sin-datos">No hay clientes registrados aún.</p>
                 </div>
-                <button class="btn-peligro" onclick="borrarClientes()"> Borrar todos los clientes</button>
-            </section>
+                <div class="sin-clientes" id="sinClientes">
+                    Aún no hay clientes registrados
+                </div>
+                <button class="btn-borrar" onclick="borrarClientes()">🗑️ Borrar Todos los Clientes</button>
+            </div>
 
-            <!-- EDITOR DE LANDING -->
-            <section class="admin-seccion">
-                <h2 class="admin-titulo"> Editar Contenido de la Landing</h2>
-
-                <div class="form-grupo">
+            <!-- EDITOR DE CONTENIDO -->
+            <div class="admin-section">
+                <h3>Editar Contenido de la Landing</h3>
+                
+                <div class="form-group">
                     <label>Título Principal (Hero)</label>
                     <input type="text" id="inputHeroTitulo" placeholder="Ej: iHope Watch Series X">
                 </div>
 
-                <div class="form-grupo">
+                <div class="form-group">
                     <label>Subtítulo (Hero)</label>
                     <textarea id="inputHeroSubtitulo" rows="3" placeholder="Ej: El reloj inteligente que redefine el lujo..."></textarea>
                 </div>
 
-                <div class="form-grupo">
+                <div class="form-group">
                     <label>Título — Sección Nosotros</label>
                     <input type="text" id="inputNosotrosTitulo" placeholder="Ej: Diseño que Inspira">
                 </div>
 
-                <div class="form-grupo">
+                <div class="form-group">
                     <label>Texto — Sección Nosotros</label>
                     <textarea id="inputNosotrosTexto" rows="4" placeholder="Ej: Cada reloj iHope es una obra de arte..."></textarea>
                 </div>
 
-                <div class="btn-grupo">
-                    <button class="btn-guardar" onclick="guardarCambios()"> Guardar Cambios</button>
-                    <button class="btn-reset" onclick="resetearContenido()"> Restaurar Defaults</button>
-                </div>
-
-                <div id="mensajeGuardado" class="mensaje-ok" style="display:none;">
-                     ¡Cambios guardados! Se verán en la landing page.
-                </div>
-            </section>
+                <button class="btn-guardar" onclick="guardarCambios()">💾 Guardar Cambios</button>
+                <div id="mensajeGuardado">✅ ¡Cambios guardados exitosamente!</div>
+                <button class="btn-restaurar" onclick="resetearContenido()">🔄 Restaurar Valores por Defecto</button>
+            </div>
 
         </div>
     </div>
